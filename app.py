@@ -83,13 +83,7 @@ def encode(text):
 
     # Print the output string
     print(f"\nOUTPUT: \n{output}")
-
-
-def text_accepted(text):
-    if input_text == '@':
-        return False
-    else:
-        return True
+    return output
 
 
 def is_morse(input_text):
@@ -111,17 +105,7 @@ def decode(input_text):
                 decoded_char = sym
                 decoded_word += decoded_char
     print(decoded_word)
-
-
-def need_another_encoding():
-    response = ""
-    if response != "Y" or response != "N":
-        response = input("\nNeed More Encoding/Decoding? Y/N: ")
-        if response == "N":
-            return False
-        elif response == "Y":
-            print("\n\n/////////// NEW ENCODING ///////////")
-            return True
+    return decoded_word
 
 
 ################ ROUTES ##################
@@ -129,7 +113,17 @@ def need_another_encoding():
 def index():
     output = ""
     form = CreateConverterForm()
-    return render_template("index.html", year=year, form=form, output=output)
+    if form.validate_on_submit():
+        print("Success")
+        input_text = form.input.data
+        # Check if input is text or morse code
+        if is_morse(input_text):
+            output = decode(input_text)
+        else:
+            output = encode(input_text)
+        return render_template("index.html", year=year, form=form, output=output)
+    else:
+        return render_template("index.html", year=year, form=form, output=output)
 
 
 # # set while variable
