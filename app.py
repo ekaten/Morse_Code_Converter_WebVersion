@@ -51,7 +51,7 @@ MORSE_CODE = {
 ################ APP INITS ##################
 
 app = Flask(__name__)
-app.secret_key = "sdkfgnslkdfnslkdfn"
+app.secret_key = "sdkfgnslkdfnslkdfndf"
 Bootstrap(app)
 
 
