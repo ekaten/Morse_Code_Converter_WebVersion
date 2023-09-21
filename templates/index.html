@@ -1,0 +1,27 @@
+{% include "header.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+<div class="page-body py-5 container align-content-center justify-content-center" style="display: flex;">
+
+    <div class="converter-body px-4 py-5 text-center align-content-center justify-content-center" style="background-color: #FFFFFF80; border-radius: 10px;">
+        <div class="converter-content">
+            <h1 class="converter-title display-5 fw-bold text-body-emphasis">Morse Code Converter</h1>
+            <p class="comment lead mb-4">Quickly Convert English Text into Morse Code and Translate Morse Code into English.</p>
+            <div class="col-lg-10 mx-auto">
+                {{ wtf.quick_form(form, novalidate=True, button_map={"convert_button": "dark"}) }}
+            </div>
+            <div class="col-lg-10 mx-auto mb-2">
+                <textarea class="form-control" id="output" name="output" placeholder="Output:" required="" spellcheck="false">{{output}}</textarea>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+{% include "footer.html" %}
