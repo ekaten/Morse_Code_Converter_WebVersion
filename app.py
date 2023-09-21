@@ -59,7 +59,7 @@ Bootstrap(app)
 
 
 class CreateConverterForm(FlaskForm):
-    input = TextAreaField(label="", validators=[DataRequired()],render_kw={"placeholder": "Input:"})
+    input = TextAreaField(label="", validators=[DataRequired()], render_kw={"placeholder": "Input:"})
     convert_button = SubmitField(label='Convert')
 
 
@@ -124,34 +124,6 @@ def index():
         return render_template("index.html", year=year, form=form, output=output)
     else:
         return render_template("index.html", year=year, form=form, output=output)
-
-
-# # set while variable
-# need_encoding = True
-#
-# # While encoding is needed, request input
-# while need_encoding:
-#     print("---Type @ to quit---")
-#     input_text = input("\nINPUT: ")
-#
-#     # Check if user wants to quit or encode/decode
-#     if text_accepted(input_text):
-#         # Check if input is text or morse code
-#         if is_morse(input_text):
-#             decode(input_text)
-#         else:
-#             encode(input_text)
-#     else:
-#         break
-#
-#
-#     # Does user want to do another decoding/encoding session?
-#     need_encoding = need_another_encoding()
-#
-#
-#
-# print("\n//////////// Good Bye! /////////////")
-#
 
 
 app.run(debug=True, port=7000)
