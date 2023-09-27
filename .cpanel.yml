@@ -3,7 +3,7 @@ deployment:
   tasks:
 
     - export DEPLOYPATH=/home/ekatzgmo/Morse/
-    - /bin/cp -R templates $DEPLOYPATH
-    - /bin/cp -R static $DEPLOYPATH
-    - /bin/cp app.py $DEPLOYPATH
-    - /bin/cp requirements.txt $DEPLOYPATH
+    - cp -R templates $DEPLOYPATH
+    - cp -R static $DEPLOYPATH
+    - cp app.py $DEPLOYPATH
+    - cp requirements.txt $DEPLOYPATH
