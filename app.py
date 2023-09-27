@@ -126,4 +126,5 @@ def index():
         return render_template("index.html", year=year, form=form, output=output)
 
 
-app.run(debug=True, port=7000)
+if __name__ == "__main__":
+    app.run(debug=True)
